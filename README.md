@@ -30,9 +30,23 @@ npm run preview
 
 ## Deploy
 
-Deploys the `dist` folder to Cloudflare Pages via Wrangler (run `npx wrangler login` once first, and `npm run build` beforehand if deploying locally rather than from Cloudflare's own build step):
+### Cloudflare Builds (Git integration)
+
+In the Cloudflare dashboard, under **Settings → Builds**:
+
+| Setting | Value |
+| --- | --- |
+| Build command | `npm run build` |
+| Deploy command | `npm run deploy` |
+
+Do **not** use the default `npx wrangler deploy` — that is for Workers. This project is a static Vite app on **Cloudflare Pages**, so the deploy command must be `npm run deploy` (which runs `wrangler pages deploy`).
+
+### Manual deploy
+
+Run `npx wrangler login` once first, then:
 
 ```bash
+npm run build
 npm run deploy
 ```
 
