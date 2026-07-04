@@ -30,7 +30,7 @@ npm run preview
 
 ## Deploy
 
-Deploys the built site to Cloudflare Pages via Wrangler (run `npx wrangler login` once first):
+Deploys the `dist` folder to Cloudflare Pages via Wrangler (run `npx wrangler login` once first, and `npm run build` beforehand if deploying locally rather than from Cloudflare's own build step):
 
 ```bash
 npm run deploy
