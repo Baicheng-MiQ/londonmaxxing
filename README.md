@@ -39,7 +39,7 @@ In the Cloudflare dashboard, under **Settings → Builds**:
 | Build command | `npm run build` |
 | Deploy command | `npm run deploy` |
 
-Do **not** use the default `npx wrangler deploy` — that is for Workers. This project is a static Vite app on **Cloudflare Pages**, so the deploy command must be `npm run deploy` (which runs `wrangler pages deploy`).
+The Worker name in the dashboard must match `name` in `wrangler.toml` (`londonmaxxing`). Deploy uploads the Vite build output from `dist/` as Worker static assets via `wrangler deploy`.
 
 ### Manual deploy
 
